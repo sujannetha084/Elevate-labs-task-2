@@ -1,0 +1,30 @@
+
+Key observations from this EDA run:
+
+1. Survival: Overall survival rate is 51.6%.
+   Females survive at a much higher rate (83.1%)
+   than males (33.5%) -> Sex is a strong predictor.
+
+2. Passenger class: 1st class passengers survive at a higher rate than 3rd class
+   (60.7% vs
+   49.1%), suggesting Pclass
+   (likely a proxy for socio-economic status / cabin location) matters for survival.
+
+3. Fare is heavily right-skewed (skew = 4.01) with a long tail of
+   high-fare outliers, visible clearly in both the histogram and the boxplot.
+
+4. Age is roughly bell-shaped but has a slight right skew (skew = 0.21),
+   with a concentration of passengers in their 20s-30s.
+
+5. Correlation matrix: Fare and Pclass are negatively correlated
+   (-0.58), which makes sense since lower Pclass
+   number (1st class) pays a higher fare. Survived correlates negatively with Pclass
+   (-0.09), reinforcing observation #2.
+
+6. SibSp and Parch show a negative
+   correlation with each other (-0.07). In the real
+   Titanic dataset these two are positively correlated since both describe family
+   relationships aboard; the small magnitude here (and its sign) can vary with sampling.
+
+7. No single pair of numeric features shows extremely high correlation (>0.8), so there's
+   no obvious multicollinearity issue among the raw numeric features in this dataset.
